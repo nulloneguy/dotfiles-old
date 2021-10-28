@@ -3,6 +3,6 @@
 - wm `awesome`
 - launcher `rofi`
 - terminal `kitty`
-- editor 'neovim' 
+- editor `neovim` 
 
 ![screenshot](screenshot.png "Screenshot")
