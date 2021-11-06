@@ -1,0 +1,14 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": [
+		"css",
+		"less",
+		"scss",
+		"markdown",
+		"javascript",
+		"json",
+		"lua",
+		"html",
+		"shell"
+	],
+	"prettier.useTabs": true
+}

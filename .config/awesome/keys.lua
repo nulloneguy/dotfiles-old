@@ -445,7 +445,7 @@ keys.globalkeys = gears.table.join(
   -- ========================================
   awful.key(
     { altkey }, "t",
-    function () awful.spawn(Apps.terminal) end,
+    function () awful.spawn("kitty") end,
     { description = "terminal", group = "hotkeys" }
   ),
 
@@ -458,14 +458,20 @@ keys.globalkeys = gears.table.join(
   ),
 
   awful.key(
+    { altkey }, "f",
+    function () awful.spawn("caja") end,
+    { description = "file browser", group = "hotkeys" }
+  ),
+
+  awful.key(
     { altkey }, "d",
-    function () awful.spawn(Apps.launcher) end,
+    function () awful.spawn("rofi -show drun") end,
     { description = "application launcher", group = "hotkeys" }
   ),
 
   awful.key(
     { altkey }, "b",
-    function () awful.spawn(Apps.web_browser) end,
+    function () awful.spawn("firefox") end,
     { description = "web browser", group = "hotkeys" }
   ),
 
@@ -476,7 +482,7 @@ keys.globalkeys = gears.table.join(
   awful.key(
     {}, "Print",
     function ()
-      awful.spawn.with_shell(Apps.screenshot .. "  | xclip -sel clip -t image/png" )
+      awful.spawn.with_shell("takeshot --now  | xclip -sel clip -t image/png")
       --naughty.notify {
       --  icon = beautiful.icons_path .. "screenshot.svg",
       --  title = "Screenshot",
@@ -489,23 +495,23 @@ keys.globalkeys = gears.table.join(
   awful.key(
     { modkey }, "Print",
     function ()
-      os.execute(Apps.screenshot .. " -s  | xclip -sel clip -t image/png" )
+      os.execute("takeshot --area  | xclip -sel clip -t image/png")
       --naughty.notify {
       --  icon = beautiful.icons_path .. "screenshot.svg",
       --  title = "Screenshot",
       --  text = "Screenshot of selected area stored in clipboard.",
       --}
     end,
-    { description = "take a screenshot selection", group = "hotkeys" }
+    { description = "take a screenshot selection / area", group = "hotkeys" }
   ),
 
   awful.key(
     { modkey, shiftkey }, "Print",
     function ()
-      awful.spawn.with_shell(Apps.screenshot .. " -d 3 | xclip -sel clip -t image/png" )
+      awful.spawn.with_shell("takeshot --in5 | xclip -sel clip -t image/png" )
 
       gears.timer {
-        timeout = 3,
+        timeout = 5,
         autostart = true,
         single_shot = true,
         callback = function ()

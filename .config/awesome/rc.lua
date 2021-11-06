@@ -18,23 +18,10 @@ local config_dir = gears.filesystem.get_configuration_dir()
 -- User Config
 -- ========================================
 
--- define default apps
-Apps = {
-  terminal          = "kitty",
-  launcher          = "rofi -show drun",
-  web_browser       = "firefox",
-  volume_manager    = "pavucontrol",
-  network_manager   = "kitty -e nmtui",
-  power_manager     = "xfce4-power-manager",
-  bluetooth_manager = "blueman-manager",
-  screenshot        = "maim -u -f png",
-  filebrowser       = "ranger",
-}
-
 -- network interfaces
 Network_Interfaces = {
   wlan = "wlan0",
-  lan = "enp42s0",
+  lan = "enp0s21f0u1",
 }
 
 -- layouts
@@ -67,7 +54,9 @@ local startup_scripts = {
   -- Set wallpaper
   "feh --bg-scale " .. config_dir .. "/wallpapers/aenami.jpg",
   -- polkit
-  "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+  "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+  -- power manager
+  "xfce4-power-manager",
 }
 
 -- ========================================
@@ -84,13 +73,17 @@ beautiful.init(config_dir .. "theme.lua")
 -- ========================================
 
 -- Run all apps listed on start up
-for _, app in ipairs(startup_scripts) do
-  -- Don't spawn startup command if already exists
-  awful.spawn.with_shell(string.format(
-    [[ pgrep -u $USER -x %s > /dev/null || (%s) ]],
-    helpers.get_main_process_name(app),
-    app
-  ))
+--for _, app in ipairs(startup_scripts) do
+--  -- Don't spawn startup command if already exists
+--  awful.spawn.with_shell(string.format(
+--    [[ pgrep -u $USER -x %s > /dev/null || (%s) ]],
+--    helpers.get_main_process_name(app),
+--    app
+--  ))
+--end
+
+for app = 1, #startup_scripts do
+	awful.util.spawn(startup_scripts[app])
 end
 
 -- Start daemons

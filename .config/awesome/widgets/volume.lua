@@ -28,7 +28,7 @@ local buttons = function (screen)
   return gears.table.join(
     awful.button(
       {}, keys.leftclick,
-      function() awful.spawn(Apps.volume_manager) end
+      function() awful.spawn('pavucontrol') end
     ),
     awful.button(
       {}, keys.rightclick,
@@ -49,7 +49,6 @@ end
 -- update widget percentage
 local update_widget_percentage = function (widget, percentage)
   local icon_name
-
   if percentage <= 30 then
     icon_name = "volume_low"
   elseif percentage > 30 and percentage <= 60 then

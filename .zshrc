@@ -18,7 +18,7 @@ export SAVEHIST=10000
 
 # ohmyzsh
 export ZSH="/usr/share/oh-my-zsh"
-ZSH_THEME="af-magic"
+ZSH_THEME="random"
 DISABLE_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX=true
 plugins=()

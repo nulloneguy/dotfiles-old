@@ -142,14 +142,8 @@ alias grep="grep --color=always"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
-alias ls="ls --color=auto"
-alias la="ls -alFh --color=auto"
-alias llp="stat -c '%A %a %n' {*,.*}"
-alias ll="ls -a --color=auto"
-alias l="ls -CF --color=auto"
-alias .l="dirs -v"
-alias lss="ls -sh | sort -h"
-alias duh="du -d 1 -h | sort -h"
+alias ls="lsd --color=auto"
+alias la="lsd -alFh --color=auto"
 
 alias mk="mkdir"
 mkj () {

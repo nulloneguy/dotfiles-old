@@ -1,316 +1,151 @@
-" Plug "{{{
-" ---------------------------------------------------------------------
-
-call plug#begin('~/.vim/plugged')
-
-
-" === nerdtree ==========================================================
-Plug 'preservim/nerdtree' |
-    \ Plug 'Xuyuanp/nerdtree-git-plugin' |
-	\ Plug 'ryanoasis/vim-devicons' |
-	\ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' |
-	\ Plug 'PhilRunninger/nerdtree-visual-selection'
-" =======================================================================
-
-
-" === coc nvim ==========================================================
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" =======================================================================
-
-
-" === git plugins ========================================================
-Plug 'airblade/vim-gitgutter'
-" ========================================================================
-
-
-" === help plugins ======================================================
-Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-Plug 'machakann/vim-highlightedyank' " highlight words on yank (copy)
-Plug 'morhetz/gruvbox' " cool colorscheme
-" =======================================================================
-
-
-call plug#end()
-
-"}}}
-
 " Fundamentals "{{{
 " ---------------------------------------------------------------------
 
+" init autocmd
+autocmd!
+" set script encoding
+scriptencoding utf-8
+" stop loading config if it's on tiny or small
+if !1 | finish | endif
+
+set nocompatible
+set number
+syntax enable
+set fileencodings=utf-8,latin
 set encoding=utf-8
 set title
 set autoindent
-set smarttab
+set background=dark
+set nobackup
 set hlsearch
+noremap <ESC> :noh<CR><ESC>
 set showcmd
-set cindent
-set hlsearch
+set cmdheight=1
+set laststatus=2
 set scrolloff=10
+set expandtab
+"let loaded_matchparen = 1
+set shell=fish
+set backupskip=/tmp/*,/private/tmp/*
+set clipboard+=unnamedplus
+set guifont="Hack Nerd Font s:16"
+
+" save with Ctrl + s
+nmap <c-s> :w<CR>
+imap <c-s> :<Esc>:w<CR>a
+
+" incremental substitution (neovim)
+if has('nvim')
+  set inccommand=split
+endif
+
+" Suppress appending <PasteStart> and <PasteEnd> when pasting
+set t_BE=
+
+set nosc noru nosm
+" Don't redraw while executing macros (good performance config)
 set lazyredraw
+"set showmatch
+" How many tenths of a second to blink when matching brackets
+"set mat=2
+" Ignore case when searching
 set ignorecase
-set tabstop=4
-set shiftwidth=4
+" Be smart when using tabs ;)
+set smarttab
+" indents
+filetype plugin indent on
+set shiftwidth=2
+set tabstop=2
 set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
+set backspace=start,eol,indent
+" Finding files - Search down into subfolders
 set path+=**
 set wildignore+=*/node_modules/*
-"set expandtab 
-set number
-set termguicolors
-set cursorline
-" Set cursor line color on visual mode
-highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
-highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
 
-colorscheme gruvbox
-set clipboard=unnamedplus
+" Turn off paste mode when leaving insert
+autocmd InsertLeave * set nopaste
 
-" j/k will move virtual lines (lines that wrap)
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
-inoremap jk <ESC>
+" Add asterisks in block comments
+set formatoptions+=r
 
-" if hidden is not set, TextEdit might fail.
-set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
-set updatetime=300
-
-set shortmess+=c " don't give |ins-completion-menu| messages.
-
-set signcolumn=yes " always show signcolumns
-
-" Save with <C-s>
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
 "}}}
 
-" Mappings "{{{
+" Highlights "{{{
 " ---------------------------------------------------------------------
 
-" Increment/decrement
-nnoremap + <C-a>
-nnoremap - <C-x>
+set cursorline
+"set cursorcolumn
 
-" Select all
-nmap <C-a-a> gg<S-v>G
+" Set cursor line color on visual mode
+highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
 
-" Delete a word backwards
-nnoremap dw vb"_d
+highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
 
-" Save with root permission
-command! W w !sudo tee > /dev/null %
-
-" Split window
-nmap ss :split<Return><C-w>w
-nmap sv :vsplit<Return><C-w>w
-" Move window
-nmap <Space> <C-w>w
-map s<left> <C-w>h
-map s<up> <C-w>k
-map s<down> <C-w>j
-map s<right> <C-w>l
-map sh <C-w>h
-map sk <C-w>k
-map sj <C-w>j
-map sl <C-w>l
-" Resize window
-nmap <C-w><left> <C-w><
-nmap <C-w><right> <C-w>>
-nmap <C-w><up> <C-w>+
-nmap <C-w><down> <C-w>-
-" }}}"
-
-" Plugin configs "{{{
-" ---------------------------------------------------------------------
-
-
-" NERDTree "{{{
-" ---------------------------------------------------------------------
-
-nnoremap <C-n> :NERDTree<CR>
-
-" nerdtree / git ======================
-let g:NERDTreeGitStatusUseNerdFonts = 1
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-			\ 'Modified'  :'✹',
-			\ 'Staged'    :'✚',
-            \ 'Untracked' :'✭',
-            \ 'Renamed'   :'➜',
-            \ 'Unmerged'  :'═',
-            \ 'Deleted'   :'✖',
-            \ 'Dirty'     :'✗',
-            \ 'Ignored'   :'☒',
-            \ 'Clean'     :'✔︎',
-            \ 'Unknown'   :'?',
-            \ }
-
-let g:NERDTreeGitStatusUntrackedFilesMode = 'all'
-let g:NERDTreeIgnore = ['^node_modules$', '.git', '.github']
-" }}}"
-
-" Help plugins "{{{
-" ---------------------------------------------------------------------
-
-" Highlight yank(copy)
-let g:highlightedyank_highlight_duration = 75
-
-" vim-prettier
-let g:prettier#quickfix_enabled = 1
-let g:prettier#quickfix_auto_focus = 1
-" prettier command for coc
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" run prettier on save
-let g:prettier#autoformat = 1
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
-" ctrlp
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-" }}}"
-
-" Git "{{{
-" ---------------------------------------------------------------------
-
-" vim-gitgutter used to do this by default:
-
-"let g:gitgutter_set_sign_backgrounds = 1
-
-highlight GitGutterAdd    guifg=#009900 ctermfg=2
-highlight GitGutterChange guifg=#fcca12 ctermfg=3
-highlight GitGutterDelete guifg=#ff2222 ctermfg=1
-
-let g:gitgutter_sign_added = 'xx'
-let g:gitgutter_sign_modified = 'yy'
-let g:gitgutter_sign_removed = 'zz'
-let g:gitgutter_sign_removed_first_line = '^^'
-let g:gitgutter_sign_removed_above_and_below = '{'
-let g:gitgutter_sign_modified_removed = 'ww'
-
-" Coc "{{{
-" ---------------------------------------------------------------------
-
-let g:coc_global_extensions = [
-  \ 'coc-snippets',
-  \ 'coc-pairs',
-  \ 'coc-tsserver',
-  \ 'coc-eslint', 
-  \ 'coc-prettier', 
-  \ 'coc-json', 
-  \ ]
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap for rename current word
-nmap <F2> <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
+augroup BgHighlight
   autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
+  autocmd WinEnter * set cul
+  autocmd WinLeave * set nocul
+augroup END
 
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+if &term =~ "screen"
+  autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
+  autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
+endif
 
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
+"}}}
 
-" Create mappings for function text object, requires document symbols feature of languageserver.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
+" File types "{{{
+" ---------------------------------------------------------------------
+" JavaScript
+au BufNewFile,BufRead *.es6 setf javascript
+" TypeScript
+au BufNewFile,BufRead *.tsx setf typescriptreact
+" Markdown
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.mdx set filetype=markdown
+" Flow
+au BufNewFile,BufRead *.flow set filetype=javascript
+" Fish
+au BufNewFile,BufRead *.fish set filetype=fish
 
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <C-d> <Plug>(coc-range-select)
-xmap <silent> <C-d> <Plug>(coc-range-select)
+set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
+"}}}
 
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+" Imports "{{{
+" ---------------------------------------------------------------------
 
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+runtime ./plug.vim
+runtime ./maps.vim
 
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"}}}
 
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" Syntax theme "{{{
+" ---------------------------------------------------------------------
 
-" }}}"
+" true color
+if exists("&termguicolors") && exists("&winblend")
+  syntax enable
+  set termguicolors
+  set winblend=0
+  set wildoptions=pum
+  set pumblend=5
+  set background=dark
+  " Use NeoSolarized
+  let g:neosolarized_termtrans=1
+  runtime ./colors/NeoSolarized.vim
+  colorscheme NeoSolarized
+endif
 
-" }}}"
+"}}}
 
+" Extras "{{{
+" ---------------------------------------------------------------------
+
+set exrc
+
+"}}}
 
 " vim: set foldmethod=marker foldlevel=0:

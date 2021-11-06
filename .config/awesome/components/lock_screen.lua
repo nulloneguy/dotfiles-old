@@ -231,7 +231,7 @@ function LockScreen:get_input ()
 
       -- Fix for Control+Delete crashing the keygrabber
       {
-        { keys.ctrlkey }, "Delete",
+       { keys.ctrlkey }, "Delete",
         function ()
           self:reset_input()
           self:get_input()
