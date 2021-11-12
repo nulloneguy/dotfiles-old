@@ -1,8 +1,6 @@
 " coc-prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-
-
 " coc-snippets
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
