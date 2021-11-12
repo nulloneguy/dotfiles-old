@@ -23,12 +23,15 @@ set showcmd
 set cmdheight=1
 set laststatus=2
 set scrolloff=10
-set expandtab
+set noexpandtab
 "let loaded_matchparen = 1
 set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
 set clipboard+=unnamedplus
 set guifont="Hack Nerd Font s:16"
+
+set list
+set listchars=tab:>·,trail:~,extends:>,precedes:<,space:.
 
 " save with Ctrl + s
 nmap <c-s> :w<CR>
@@ -54,8 +57,8 @@ set ignorecase
 set smarttab
 " indents
 filetype plugin indent on
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
@@ -136,7 +139,7 @@ if exists("&termguicolors") && exists("&winblend")
   " Use NeoSolarized
   let g:neosolarized_termtrans=1
   runtime ./colors/NeoSolarized.vim
-  colorscheme NeoSolarized
+  colorscheme iceberg
 endif
 
 "}}}
