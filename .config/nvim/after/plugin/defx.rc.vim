@@ -79,15 +79,16 @@ autocmd FileType defx call s:defx_my_settings()
 call defx#custom#column('icon', {
       \ 'directory_icon': '▸',
       \ 'opened_icon': '▾',
-      \ 'root_icon': ' ',
+      \ 'root_icon': '~',
       \ })
+
 call defx#custom#column('git', 'indicators', {
-  \ 'Modified'  : 'M',
-  \ 'Staged'    : '✚',
-  \ 'Untracked' : '✭',
-  \ 'Renamed'   : '➜',
-  \ 'Unmerged'  : '═',
-  \ 'Ignored'   : '☒',
-  \ 'Deleted'   : '✖',
-  \ 'Unknown'   : '?'
-  \ })
+      \ 'Modified'  : 'M',
+      \ 'Staged'    : '✚',
+      \ 'Untracked' : '✭',
+      \ 'Renamed'   : '➜',
+      \ 'Unmerged'  : '═',
+      \ 'Ignored'   : '☒',
+      \ 'Deleted'   : '✖',
+      \ 'Unknown'   : '?'
+      \ })
