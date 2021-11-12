@@ -275,6 +275,12 @@ keys.globalkeys = gears.table.join(
     { description = "show exit screen", group = "awesome" }
   ),
 
+   awful.key(
+    { modkey }, "l",
+    function () awesome.emit_signal("lock_screen::show") end,
+    { description = "show lock screen", group = "awesome" }
+  ),
+
   awful.key(
     {}, "XF86PowerOff",
     function () awesome.emit_signal("exit_screen::show") end,

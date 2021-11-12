@@ -122,7 +122,7 @@ function LockScreen:create_widget ()
               {
                 widget = wibox.widget.textbox,
                 font   = beautiful.lock_screen_title_font,
-                text   = "Locked",
+                text   = "Заблокировано",
               },
             },
           },

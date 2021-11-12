@@ -112,6 +112,7 @@ local rules = {
     properties = {
       screen = 1,
       tag = "web",
+      fullscreen = false
     },
   },
 }
