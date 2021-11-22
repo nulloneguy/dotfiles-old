@@ -48,13 +48,13 @@ local startup_scripts = {
   -- keyboard layouts
   "setxkbmap -layout us,ru -option 'grp:alt_shift_toggle,grp_led:scroll'",
   -- Faster key repeat response
-  "xset r rate 240 45",
+  "xset r rate 260 47",
   -- Compositor
   "picom",
   -- Set wallpaper
   "feh --bg-scale " .. config_dir .. "/wallpapers/aenami.jpg",
   -- polkit
-  "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1",
+  "/usr/lib/xfce-polkit/xfce-polkit",
   -- power manager
   "xfce4-power-manager",
 }

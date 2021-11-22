@@ -15,10 +15,10 @@ require'nvim-treesitter.configs'.setup {
   },
   ensure_installed = {
     "json",
-    "yaml",
     "html",
     "css",
     "scss",
+		"vue",
     "javascript",
   },
 }

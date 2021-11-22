@@ -25,7 +25,7 @@ set laststatus=2
 set scrolloff=10
 set noexpandtab
 "let loaded_matchparen = 1
-set shell=fish
+set shell=zsh
 set backupskip=/tmp/*,/private/tmp/*
 set clipboard+=unnamedplus
 set guifont="Hack Nerd Font s:16"
@@ -57,8 +57,8 @@ set ignorecase
 set smarttab
 " indents
 filetype plugin indent on
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
@@ -110,8 +110,6 @@ au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.mdx set filetype=markdown
 " Flow
 au BufNewFile,BufRead *.flow set filetype=javascript
-" Fish
-au BufNewFile,BufRead *.fish set filetype=fish
 
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 

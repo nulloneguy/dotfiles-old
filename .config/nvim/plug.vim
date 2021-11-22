@@ -18,8 +18,8 @@ Plug 'windwp/nvim-autopairs'
 Plug 'machakann/vim-highlightedyank'
 Plug 'honza/vim-snippets'
 Plug 'digitaltoad/vim-pug'
-Plug 'Yggdroot/indentLine'
 Plug 'rstacruz/sparkup'
+Plug 'hrsh7th/nvim-cmp'
 
 call plug#end()
 

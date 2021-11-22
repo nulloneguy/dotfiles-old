@@ -477,7 +477,7 @@ keys.globalkeys = gears.table.join(
 
   awful.key(
     { altkey }, "b",
-    function () awful.spawn("firefox") end,
+    function () awful.spawn("brave") end,
     { description = "web browser", group = "hotkeys" }
   ),
 
@@ -488,12 +488,7 @@ keys.globalkeys = gears.table.join(
   awful.key(
     {}, "Print",
     function ()
-      awful.spawn.with_shell("takeshot --now  | xclip -sel clip -t image/png")
-      --naughty.notify {
-      --  icon = beautiful.icons_path .. "screenshot.svg",
-      --  title = "Screenshot",
-      --  text = "Screenshot of screen stored in clipboard.",
-      --}
+      awful.spawn.with_shell("flameshot full -c")
     end,
     { description = "take a screenshot", group = "hotkeys" }
   ),
@@ -501,35 +496,9 @@ keys.globalkeys = gears.table.join(
   awful.key(
     { modkey }, "Print",
     function ()
-      os.execute("takeshot --area  | xclip -sel clip -t image/png")
-      --naughty.notify {
-      --  icon = beautiful.icons_path .. "screenshot.svg",
-      --  title = "Screenshot",
-      --  text = "Screenshot of selected area stored in clipboard.",
-      --}
+      os.execute("flameshot gui")
     end,
     { description = "take a screenshot selection / area", group = "hotkeys" }
-  ),
-
-  awful.key(
-    { modkey, shiftkey }, "Print",
-    function ()
-      awful.spawn.with_shell("takeshot --in5 | xclip -sel clip -t image/png" )
-
-      gears.timer {
-        timeout = 5,
-        autostart = true,
-        single_shot = true,
-        callback = function ()
-          naughty.notify {
-          icon = beautiful.icons_path .. "screenshot.svg",
-          title = "Screenshot",
-          text = "Screenshot of screen stored in clipboard.",
-          }
-        end
-      }
-    end,
-    { description = "take a screenshot after 5 secs", group = "hotkeys" }
   ),
 
 
