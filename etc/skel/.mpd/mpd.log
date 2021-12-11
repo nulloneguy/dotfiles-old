@@ -1,0 +1,26 @@
+Nov 30 01:22 : state_file: Unrecognized line in state file: ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+Nov 30 01:22 : state_file: Unrecognized line in state file: ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+Nov 30 01:22 : state_file: Unrecognized line in state file:
+Nov 30 01:22 : avahi: Service 'Music Player @ feedme' successfully established.
+Nov 30 11:57 : avahi: Service 'Music Player @ feedme' successfully established.
+Nov 30 12:01 : player: played "N3WPORT - Power (feat. braev) [NCS Release].mp3"
+Nov 30 12:04 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Nov 30 12:07 : player: played "Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3"
+Nov 30 12:11 : player: played "Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3"
+Nov 30 12:39 : player: played "Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3"
+Nov 30 12:43 : player: played "N3WPORT - Power (feat. braev) [NCS Release].mp3"
+Nov 30 12:46 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Nov 30 12:49 : player: played "Cartoon - On & On (feat. Daniel Levi) [NCS Release].mp3"
+Nov 30 12:52 : player: played "Culture Code - Make Me Move (feat. Karra) [NCS Release].mp3"
+Nov 30 12:56 : player: played "Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3"
+Nov 30 12:59 : player: played "N3WPORT - Power (feat. braev) [NCS Release].mp3"
+Nov 30 13:05 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Nov 30 15:41 : player: played "NEFFEX - Grateful [Copyright Free].mp3"
+Nov 30 18:42 : exception: Failed to access /home/bebop/Music: No such file or directory
+Dec 04 19:43 : exception: Failed to access /home/bebop/Music: No such file or directory
+Dec 04 19:43 : exception: Failed to access /home/bebop/Music: No such file or directory
+Dec 11 11:51 : update: added youtube/Nightcore Songs Mix 2021 ♫ Nightcore Gaming Mix ♫ Trap, Bass, Dubstep, House, DnB.mp3
+Dec 11 11:51 : update: added youtube/Best Nightcore Gaming Mix 2021 ♫ Best of EDM Mix ♫ House, Bass, Dubstep, Trap, DnB NCS, Monstercat.mp3
+Dec 11 11:51 : update: added youtube/Linkin Park Full Album _ The Best Songs Of Linkin Park Ever.mp3
+Dec 11 11:51 : update: added youtube/Top 50 Songs Of NEFFEX - Best of NEFFEX.mp3
+Dec 11 11:56 : player: played "youtube/Nightcore Songs Mix 2021 ♫ Nightcore Gaming Mix ♫ Trap, Bass, Dubstep, House, DnB.mp3"

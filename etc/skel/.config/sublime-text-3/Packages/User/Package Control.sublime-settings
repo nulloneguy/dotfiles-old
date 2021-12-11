@@ -1,0 +1,33 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"ApacheConf",
+		"Color Highlight",
+		"ColorPicker",
+		"CSScomb",
+		"Emmet",
+		"Gist",
+		"gruvbox",
+		"Markdown Extended",
+		"One Dark Material - Theme",
+		"Package Control",
+		"QML",
+		"Sass",
+		"SFTP",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeLinter-php",
+		"Terminal",
+		"Terraform",
+		"TOML",
+		"TypeScript",
+		"Vue Syntax Highlight",
+	],
+}

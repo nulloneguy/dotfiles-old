@@ -1,0 +1,33 @@
+add_newline = true
+
+[character]
+success_symbol = "[ﬦ](bold green)"
+error_symbol = "[ﬦ](bold red)"
+
+[package]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+[lua]
+symbol= " "
+
+[git_branch]
+symbol= " "
+
+[cmake]
+symbol = "卑 "
+
+[golang]
+symbol = "ﳑ "
+
+[custom.docker]
+command = "docker version -f '{{.Server.Version}}' 2>/dev/null"
+files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+style = "blue bold"
+symbol = " v"
+format = "via [$symbol$output]($style) "

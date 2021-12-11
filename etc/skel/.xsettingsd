@@ -1,11 +1,14 @@
-# This config wiln be executed by xsettingsd
-# Make sure you have instalned it
-# Add don't forget to add it to your startup
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
+Net/ThemeName "Adwaita-dark"
+Net/IconThemeName "Archcraft-dark"
+Gtk/CursorThemeName "Fluent-dark"
+Net/EnableEventSounds "1"
+Net/EnableInputFeedbackSounds "0"
+Xft/DPI "-1"
 Xft/Hinting 1
-Xft/RGBA "rgb"
 Xft/HintStyle "hintslight"
 Xft/Antialias 1
+Xft/RGBA "none"
 
-# Net/IconThemeName "ln-ico"
-# Net/ThemeName "ln"
