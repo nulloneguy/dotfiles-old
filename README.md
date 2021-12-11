@@ -1,11 +1,16 @@
+# DWM
+
 ## Screenshot
-![screenshot](screenshot.png "Screenshot")
+
+![screenshot](s1.png 'Screenshot 1') ![screenshot](s2.png 'Screenshot 2')
+![screenshot](s3.png 'Screenshot 3')
 
 ## Apps
-- wm `awesome`
+
+- wm `dwm`
 - launcher `rofi`
-- terminal `kitty`
+- terminal `st`
 - editor `neovim`
-- fm `caja`
-  
-## Wallpaper [aenami.png](https://github.com/nulloneguy/dotfiles/blob/main/.config/awesome/wallpapers/aenami.jpg)
+- fm `pcmanfm`
+
+## Wallpaper [car.jpeg](car.jpeg)
