@@ -115,6 +115,8 @@ if ok then
             python = F.autopep8,
             html = F.prettierd,
             javascript = F.prettierd,
+            vue = F.prettierd,
+            javascriptvue = F.prettierd,
             javascriptreact = F.prettierd,
             typescript = F.prettierd,
             typescriptreact = F.prettierd,
@@ -135,7 +137,7 @@ if ok then
         [[
         augroup FormatAutogroup
         autocmd!
-        autocmd BufWritePost *.js,*.jsx,*.ts,*.tsx,*.json,*.sh,*.zsh,*.c,*.cpp,*.go,*.yaml,Dockerfile,*.py,*.html,*.css,*.scss,*.less,*.graphql,*.xml,*.lua,*.md,*.rs,*.toml FormatWrite
+        autocmd BufWritePost *.js,*.jsx,*.ts,*.vue,*.tsx,*.json,*.sh,*.zsh,*.c,*.cpp,*.go,*.yaml,Dockerfile,*.py,*.html,*.css,*.scss,*.less,*.graphql,*.xml,*.lua,*.md,*.rs,*.toml FormatWrite
         augroup END
         ]],
         true

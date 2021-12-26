@@ -4,10 +4,10 @@ if ok then
     local signs = require("utils").signs
 
     vim.g.nvim_tree_root_folder_modifier = ":t"
-    vim.g.nvim_tree_quit_on_open = 1
+    vim.g.nvim_tree_quit_on_open = 0
     vim.g.nvim_tree_indent_markers = 1
     vim.g.nvim_tree_side = "left"
-    vim.g.nvim_tree_width = 35
+    vim.g.nvim_tree_width = 40
     vim.g.nvim_tree_window_picker_exclude = {
         filetype = {
             "packer",
@@ -23,7 +23,7 @@ if ok then
         ["MAKEFILE"] = 0,
     }
     vim.g.nvim_tree_show_icons = {
-        git = 0,
+        git = 1,
         folders = 1,
         files = 1,
         folder_arrows = 0,

@@ -183,7 +183,7 @@ if ok then
         GetLspClient = {
             provider = "GetLspClient",
             icon = "  ",
-            highlight = { colors.green, colors.bg1, "italic" },
+            highlight = { colors.green, colors.bg1 },
             separator = " ",
             separator_highlight = { "NONE", colors.bg1 },
         },

@@ -78,7 +78,7 @@ if ok then
         use { "mhartington/formatter.nvim" }
 
         -- Tmux
-        use { "aserowy/tmux.nvim", config = setupFrom "tmux" }
+        -- use { "aserowy/tmux.nvim", config = setupFrom "tmux" }
 
         -- Git
         use {
@@ -88,5 +88,11 @@ if ok then
             },
             config = setupFrom "gitsigns",
         }
+
+        -- Coc
+        -- use {
+        --     "neoclide/coc.nvim",
+        --     branch = "release",
+        -- }
     end)
 end

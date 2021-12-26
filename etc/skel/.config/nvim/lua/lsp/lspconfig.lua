@@ -99,7 +99,7 @@ if ok then
             prefix = " ",
         },
         signs = true,
-        underline = false,
+        underline = true,
         update_in_insert = false,
     })
 end

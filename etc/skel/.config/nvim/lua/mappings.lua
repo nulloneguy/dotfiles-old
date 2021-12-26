@@ -38,6 +38,13 @@ map("n", "<leader>s", "<cmd>SymbolsOutline<cr>", { silent = true, noremap = true
 -- [Format current buffer]
 map("n", "<leader>fm", "<cmd>Format<cr>", { silent = true, noremap = true })
 
+-- [normal saving]
+map("n", "<c-s>", "<cmd>w<cr>", { silent = true, noremap = true })
+map("i", "<c-s>", "<cmd>w<cr>", { silent = true, noremap = true })
+
+-- [Reset highlighting search]
+map("n", "<esc>", "<cmd>noh<cr>", { silent = true, noremap = true })
+
 -- [lspsaga]
 -- map("n", "<leader>lsn", "<cmd>Lspsaga diagnostic_jump_next<cr>", { silent = true, noremap = true })
 -- map("n", "<leader>lsp", "<cmd>Lspsaga diagnostic_jump_prev<cr>", { silent = true, noremap = true })

@@ -16,12 +16,13 @@ vim.cmd [[
 
 utils.opt("o", "guifont", "Liga SFMono Nerd Font:h11")
 utils.opt("b", "expandtab", true)
+utils.opt("o", "smarttab", true)
 utils.opt("b", "shiftwidth", indent)
 utils.opt("b", "smartindent", true)
 utils.opt("b", "tabstop", indent)
 utils.opt("o", "hidden", true)
 utils.opt("o", "ignorecase", true)
-utils.opt("o", "scrolloff", 2)
+utils.opt("o", "scrolloff", 5)
 utils.opt("o", "shiftround", true)
 utils.opt("o", "smartcase", true)
 utils.opt("o", "splitbelow", true)
@@ -36,11 +37,15 @@ utils.opt("o", "mouse", "a")
 utils.opt("o", "cmdheight", 1)
 
 -- Highlight on yank
-vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = false}"
+vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = true}"
 
 vim.api.nvim_command [[autocmd FileType python,c,cpp,go,lua set sw=4 ]]
 vim.api.nvim_command [[autocmd FileType python,c,cpp,go,lua set ts=4 ]]
 vim.api.nvim_command [[autocmd FileType python,c,cpp,go,lua set sts=4 ]]
+
+vim.api.nvim_command [[autocmd FileType javascript,vue set sw=2 ]]
+vim.api.nvim_command [[autocmd FileType javascript,vue set ts=2 ]]
+vim.api.nvim_command [[autocmd FileType javascript,vue set sts=2 ]]
 
 vim.g.neovide_refresh_rate = 60
 vim.g.neovide_cursor_vfx_mode = "pixiedust"
