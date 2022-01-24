@@ -31,4 +31,4 @@ Then copy config & install plugins with: <br/>
 `cp -rfv  dotfiles/skel/.config/nvim ~/.config/` <br/>
 ``nvim +'hi NormalFloat guibg=#1e222a' +PackerSync``
 
-## Wallpaper ![wallpaper](etc/skel/blood.png "blood.png")
+## Wallpaper ![wallpaper](etc/skel/.wall/blood.png "blood.png")
