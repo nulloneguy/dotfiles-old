@@ -2,7 +2,7 @@
 
 ## Screenshot ![screenshot](s.png "Screenshot 1")
 
-
+<br/>
 ## Apps
 - wm `openbox`
 - launcher `rofi`
@@ -13,7 +13,7 @@
 - editor `neovim`
 - fm `ranger`
 
-
+<br/>
 ## Install openbox config
 install ```openbox```
 
@@ -23,7 +23,7 @@ If you already have a `~/.config/openbox` folder, make a backup with: <br/>
 Then copy config: <br/>
 `cp -rfv  dotfiles/skel/.config/openbox ~/.config/`
 
-
+<br/>
 ## Install neovim config
 install `neovim` v0.6 or later
 
@@ -34,5 +34,5 @@ Then copy config & install plugins with: <br/>
 `cp -rfv  dotfiles/skel/.config/nvim ~/.config/` <br/>
 ``nvim +'hi NormalFloat guibg=#1e222a' +PackerSync``
 
-
+<br/>
 ## Wallpaper ![wallpaper](etc/skel/blood.png)
