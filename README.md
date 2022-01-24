@@ -27,7 +27,7 @@ install `neovim` v0.6 or later
 If you already have a `~/.config/nvim` folder, make a backup with: <br/>
 `mv ~/.config/nvim ~/.config/NVIM.BAK`
 
-Then copy config & install plugins with:
+Then copy config & install plugins with: <br/>
 `cp -rfv  dotfiles/skel/.config/nvim ~/.config/
 `nvim +'hi NormalFloat guibg=#1e222a' +PackerSync`
 
