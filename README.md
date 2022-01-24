@@ -13,9 +13,9 @@
 - fm `ranger`
 
 ## Install openbox config
-- install ```openbox```
+- Install ```openbox```
 
-- If you already have a `~/.config/openbox` folder, make a backup with: <br/>
+- If you already have a `~/.config/openbox` folder, make a backup with:
 `mv ~/.config/openbox ~/.config/OPENBOX.BAK`
 
 - Then copy config: <br/>
@@ -24,7 +24,7 @@
 ## Install neovim config
 - Install `neovim` v0.6 or later
 
-- If you already have a ~/.config/nvim folder, make a backup with: <br/>
+- If you already have a ~/.config/nvim folder, make a backup with:
 `mv ~/.config/nvim ~/.config/NVIM.BAK`
 
 - Then copy config & install plugins with: <br/>
