@@ -16,7 +16,7 @@
 install `openbox`
 
 If you already have a `~/.config/openbox` folder, make a backup with: <br/>
-`mv ~/.config/openbox ~/.config/OPENBOX.BAK`
+``mv ~/.config/openbox ~/.config/OPENBOX.BAK``
 
 Then copy config:
 `cp -rfv  dotfiles/skel/.config/openbox ~/.config/
@@ -28,8 +28,8 @@ If you already have a `~/.config/nvim` folder, make a backup with: <br/>
 `mv ~/.config/nvim ~/.config/NVIM.BAK`
 
 Then copy config & install plugins with: <br/>
-`cp -rfv  dotfiles/skel/.config/nvim ~/.config/
-`nvim +'hi NormalFloat guibg=#1e222a' +PackerSync`
+`cp -rfv  dotfiles/skel/.config/nvim ~/.config/ <br/>
+``nvim +'hi NormalFloat guibg=#1e222a' +PackerSync``
 
 
 ## Wallpaper ![wallpaper](etc/skel/blood.png)
