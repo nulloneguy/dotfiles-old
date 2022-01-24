@@ -19,7 +19,7 @@ If you already have a `~/.config/openbox` folder, make a backup with: <br/>
 
 `mv ~/.config/openbox ~/.config/OPENBOX.BAK`
 
-Then copy config:
+Then copy config: <br/>
 `cp -rfv  dotfiles/skel/.config/openbox ~/.config/`
 
 ## Install neovim config
