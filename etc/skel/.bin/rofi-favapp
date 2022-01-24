@@ -5,21 +5,21 @@ DIALOG_RESULT=$(echo -e 'chromium\nsubl3\ntelegram\nthunar\ndiscord\nsteam\npavu
 echo "This result is : $DIALOG_RESULT"
 sleep 1;
 
-if [ "$DIALOG_RESULT" = "chromium" ];
+if [ "$DIALOG_RESULT" = "waterfox-g3" ];
 then
-		exec chromium
+		exec waterfox-g3
 
-elif [ "$DIALOG_RESULT" = "subl3" ];
+elif [ "$DIALOG_RESULT" = "nvim" ];
 then
-		exec subl3
+		exec nvim
 
-elif [ "$DIALOG_RESULT" = "telegram" ];
+elif [ "$DIALOG_RESULT" = "kotagram-desktop" ];
 then
-		exec telegram-desktop
+		exec kotagram-desktop
 
-elif [ "$DIALOG_RESULT" = "thunar" ];
+elif [ "$DIALOG_RESULT" = "ranger" ];
 then
-		exec thunar
+		exec ranger
 
 elif [ "$DIALOG_RESULT" = "discord" ];
 then

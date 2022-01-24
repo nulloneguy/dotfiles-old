@@ -3,7 +3,7 @@
 # URL='https://yubnub.org/parser/parse?command='
 # https://startpage.com/do/search?q=
 
-URL='https://duckduckgo.com/?q='
+URL='https://yandex.ru/?q='
 QUERY=$(cat ~/.cache/search_history | rofi -dmenu -p "Search")
 if [ -n "$QUERY" ]; then
 		grep -q "$QUERY"	"$HOME/.cache/search_history"

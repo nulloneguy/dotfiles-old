@@ -3,7 +3,7 @@ local ok, bufferline = pcall(require, "bufferline")
 if ok then
     bufferline.setup {
         options = {
-            -- diagnostics = "nvim_lsp",
+            --diagnostics = "nvim_lsp",
             numbers = "buffer_id",
             indicator_icon = "",
             buffer_close_icon = "",
@@ -13,8 +13,8 @@ if ok then
             right_mouse_command = "bdelete! %d",
             left_trunc_marker = "ﰰ",
             right_trunc_marker = "ﰳ",
-            offsets = { { filetype = "NvimTree", text = "", text_align = "center" } },
-            show_tab_indicators = true,
+            offsets = { { filetype = "NvimTree", text = " ", text_align = "center" } },
+            show_tab_indicators = false,
             show_close_icon = true,
         },
         highlights = {

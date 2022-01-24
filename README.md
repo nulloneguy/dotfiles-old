@@ -1,16 +1,18 @@
-# DWM
+# Openbox
 
 ## Screenshot
 
-![screenshot](s1.png 'Screenshot 1') ![screenshot](s2.png 'Screenshot 2')
-![screenshot](s3.png 'Screenshot 3')
+![screenshot](s.png "Screenshot 1")
 
 ## Apps
 
-- wm `dwm`
+- wm `openbox`
 - launcher `rofi`
-- terminal `st`
+- themme `Skeuos-white-dark`
+- icon `WhiteSur-dark`
+- cursor `McMojave`
+- terminal `alacritty`
 - editor `neovim`
-- fm `pcmanfm`
+- fm `ranger`
 
-## Wallpaper [car.jpeg](car.jpeg)
+## Wallpaper [wallpaper](etc/skel/blood.png)

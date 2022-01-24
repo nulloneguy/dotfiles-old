@@ -3,7 +3,7 @@ local utils = require "utils"
 -- Disable ~ character in empty lines
 vim.cmd [[set fcs=eob:\ ]]
 
-local indent = 2
+local indent = 4
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
@@ -20,7 +20,7 @@ utils.opt("o", "smarttab", true)
 utils.opt("b", "shiftwidth", indent)
 utils.opt("b", "smartindent", true)
 utils.opt("b", "tabstop", indent)
-utils.opt("o", "hidden", true)
+utils.opt("o", "hidden", false)
 utils.opt("o", "ignorecase", true)
 utils.opt("o", "scrolloff", 5)
 utils.opt("o", "shiftround", true)
@@ -46,6 +46,3 @@ vim.api.nvim_command [[autocmd FileType python,c,cpp,go,lua set sts=4 ]]
 vim.api.nvim_command [[autocmd FileType javascript,vue set sw=2 ]]
 vim.api.nvim_command [[autocmd FileType javascript,vue set ts=2 ]]
 vim.api.nvim_command [[autocmd FileType javascript,vue set sts=2 ]]
-
-vim.g.neovide_refresh_rate = 60
-vim.g.neovide_cursor_vfx_mode = "pixiedust"
