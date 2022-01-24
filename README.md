@@ -15,7 +15,7 @@
 ## Install openbox config
 - Install ```openbox```
 
-- If you already have a `~/.config/openbox` folder, make a backup with:
+- If you already have a ~/.config/openbox folder, make a backup with:
 `mv ~/.config/openbox ~/.config/OPENBOX.BAK`
 
 - Then copy config: <br/>
