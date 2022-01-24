@@ -2,6 +2,7 @@
 
 ## Screenshot ![screenshot](s.png "Screenshot 1")
 
+
 ## Apps
 - wm `openbox`
 - launcher `rofi`
@@ -12,6 +13,7 @@
 - editor `neovim`
 - fm `ranger`
 
+
 ## Install openbox config
 install ```openbox```
 
@@ -20,6 +22,7 @@ If you already have a `~/.config/openbox` folder, make a backup with: <br/>
 
 Then copy config: <br/>
 `cp -rfv  dotfiles/skel/.config/openbox ~/.config/`
+
 
 ## Install neovim config
 install `neovim` v0.6 or later
