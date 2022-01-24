@@ -24,7 +24,7 @@ Then copy config: <br/>
 ## Install neovim config
 install `neovim` v0.6 or later
 
-If you already have a `~/.config/nvim` folder, make a backup with: <br/>
+If you already have a ~/.config/nvim folder, make a backup with: <br/>
 `mv ~/.config/nvim ~/.config/NVIM.BAK`
 
 Then copy config & install plugins with: <br/>
