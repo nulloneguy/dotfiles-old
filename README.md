@@ -13,19 +13,23 @@
 - fm `ranger`
 
 ## Install openbox config
-- install `openbox`
+install `openbox`
+
 If you already have a `~/.config/openbox` folder, make a backup with: <br/>
 `mv ~/.config/openbox ~/.config/OPENBOX.BAK`
+
 Then copy config:
-- `cp -rfv  dotfiles/skel/.config/openbox ~/.config/
+`cp -rfv  dotfiles/skel/.config/openbox ~/.config/
 
 ## Install neovim config
-- install `neovim` v0.6 or later
+install `neovim` v0.6 or later
+
 If you already have a `~/.config/nvim` folder, make a backup with: <br/>
 `mv ~/.config/nvim ~/.config/NVIM.BAK`
+
 Then copy config & install plugins with:
-- `cp -rfv  dotfiles/skel/.config/nvim ~/.config/
-- `nvim +'hi NormalFloat guibg=#1e222a' +PackerSync`
+`cp -rfv  dotfiles/skel/.config/nvim ~/.config/
+`nvim +'hi NormalFloat guibg=#1e222a' +PackerSync`
 
 
 ## Wallpaper ![wallpaper](etc/skel/blood.png)
