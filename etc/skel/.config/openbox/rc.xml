@@ -40,10 +40,10 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>dui</name>
+    <name>Natura</name>
     <cornerRadius>0</cornerRadius>
     <cornerRadius menu="yes">4</cornerRadius>
-    <titleLayout></titleLayout>
+    <titleLayout/>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -311,9 +311,9 @@
       </action>
     </keybind> -->
     <keybind key="C-space">
-     <action name="ShowMenu">
-       <menu>root-menu</menu>
-     </action>
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+      </action>
     </keybind>
     <!-- <keybind key="C-space">
      <action name="Execute">
@@ -397,7 +397,19 @@
       <action name="Execute">
         <command>alacritty -t term_center -e ranger</command>
       </action>
+  </keybind>
+  <keybind key="A-n">
+      <action name="Execute">
+        <command>alacritty -t term_center -e nmtui</command>
+      </action>
+  </keybind>
+
+  <keybind key="A-e">
+      <action name="Execute">
+        <command>alacritty -t term_center -e nvim</command>
+      </action>
     </keybind>
+
     <keybind key="A-t">
       <action name="Execute">
         <command>alacritty</command>
@@ -536,9 +548,9 @@
     </keybind>
   </keyboard>
   <mouse>
-    <dragThreshold>1</dragThreshold>
+    <dragThreshold>3</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
-    <doubleClickTime>500</doubleClickTime>
+    <doubleClickTime>300</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
     <screenEdgeWarpTime>0</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
