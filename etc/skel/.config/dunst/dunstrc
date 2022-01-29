@@ -24,7 +24,7 @@
   word_wrap = yes
   ignore_newline = no
   stack_duplicates = true
-  hide_duplicate_count = no
+  hide_duplicate_count = yes
   show_indicators = yes
 
   icon_position = left
